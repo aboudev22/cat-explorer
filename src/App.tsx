@@ -5,7 +5,7 @@ import useCatsImages from "./hooks/useCatsImages";
 
 export default function App() {
   const navigate = useNavigate();
-  const { data: images, isSuccess } = useCatsImages();
+  const { data: images, isSuccess } = useCatsImages(15);
 
   useEffect(() => {
     if (!isSuccess || !images?.length) return;
