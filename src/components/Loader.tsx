@@ -8,7 +8,7 @@ export default function Loader() {
 
   useEffect(() => {
     const controls = animate(count, percent, {
-      duration: 2,
+      duration: 0.8,
       onUpdate: (latest) => {
         setDisplayer(Math.floor(latest));
       },
