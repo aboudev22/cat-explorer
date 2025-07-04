@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+
+@utility bright {
+  box-shadow: -23px -161px 297px 200px rgba(189,9,84,0.46);
+-webkit-box-shadow: -23px -161px 297px 200px rgba(189,9,84,0.46);
+-moz-box-shadow: -23px -161px 297px 200px rgba(189,9,84,0.46);
+}

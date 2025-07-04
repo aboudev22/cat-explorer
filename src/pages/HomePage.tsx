@@ -1,19 +1,8 @@
 import clsx from "clsx";
 import { motion } from "framer-motion";
+import OrbitingCatButton from "../components/ButtonMore";
 import NavBar from "../components/NavBar";
-
-const itemsProps = [
-  { top: 20, left: 0, rotate: -10, color: "#fb2c36", y: -500, x: 0 },
-  { top: -20, left: 150, rotate: -6, color: "#fb2c36", y: -200, x: -110 },
-  { top: 0, left: 250, rotate: -3, color: "#fb2c36", y: -200, x: 0 },
-  { top: -20, left: 400, rotate: -5, color: "#fb2c36", y: -200, x: 250 },
-  { top: -5, left: 500, rotate: 2, color: "#fb2c36", y: -200, x: 400 },
-  { top: 10, left: 600, rotate: 1, color: "#fb2c36", y: -200, x: 560 },
-  { top: 20, left: 700, rotate: 6, color: "#fb2c36", y: -200, x: 610 },
-  { top: 20, left: 800, rotate: 8, color: "#fb2c36", y: -200, x: 800 },
-  { top: 20, left: 900, rotate: 10, color: "#fb2c36", y: -200, x: 920 },
-  { top: 0, left: 1000, rotate: 10, color: "#fb2c36", y: -200, x: 1010 },
-];
+import IMAGES_PROPS from "../stores/heroImages";
 
 const containerVariants = {
   animate: {
@@ -51,28 +40,30 @@ export default function HomePage() {
         variants={containerVariants}
         initial="initial"
         animate="animate"
-        className="relative flex h-72 w-2/3"
+        className="relative z-[8] flex h-72 w-2/3"
       >
         {Array.from({ length: 10 }).map((_, i) => (
           <motion.img
             variants={itemVariants}
-            custom={{ x: itemsProps[i].x, y: itemsProps[i].y }}
+            custom={{ x: IMAGES_PROPS[i].x, y: IMAGES_PROPS[i].y }}
             layoutId={`img-${i + 1}`}
             whileHover={{ scale: 1.2, rotate: 0, zIndex: 20 }}
             src={`/src/assets/cat${i + 1}.jpg`}
             style={{
-              top: itemsProps[i].top,
-              left: itemsProps[i].left,
-              rotate: itemsProps[i].rotate,
+              top: IMAGES_PROPS[i].top,
+              left: IMAGES_PROPS[i].left,
+              rotate: IMAGES_PROPS[i].rotate,
+              borderColor: IMAGES_PROPS[i].color,
             }}
             className={clsx(
-              "object-cover absolute rounded-2xl w-52 h-52 shadow-2xl/30 border-8 border-pink-500 cursor-pointer",
+              "object-cover absolute rounded-2xl w-52 h-52 shadow-2xl/30 border-8 border-l-fuchsia-500 cursor-pointer",
               `z-[${i + 10}]`
             )}
             alt={`cat-${i + 1}`}
           />
         ))}
       </motion.div>
+      <OrbitingCatButton />
     </motion.div>
   );
 }
