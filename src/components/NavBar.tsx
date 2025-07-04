@@ -21,13 +21,13 @@ export default function NavBar() {
       <div className="flex gap-2">
         <motion.button
           whileTap={{ scale: 0.9 }}
-          className="py-2 px-3 font-black text-xl rounded-xl bg-neutral-800 text-pink-500 cursor-pointer"
+          className="py-2 px-3 font-black text-xl text-amber-50 rounded-xl bg-neutral-800 cursor-pointer"
         >
           Log In
         </motion.button>
         <motion.button
           whileTap={{ scale: 0.9 }}
-          className="py-2 px-3 font-black text-xl rounded-xl bg-pink-500 cursor-pointer"
+          className="py-2 px-3 font-black text-xl rounded-xl bg-pink-500 text-amber-50 cursor-pointer"
         >
           Sign Up
         </motion.button>
